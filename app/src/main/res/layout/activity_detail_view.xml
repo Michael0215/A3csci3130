@@ -4,53 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.acme.a3csci3130.DetailViewActivity">
+    tools:context="com.acme.a3csci3130.DetailViewActivity"
+    tools:layout_editor_absoluteY="81dp">
+
     <EditText
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
         android:id="@+id/name"
-        android:hint = "Name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" />
+        android:hint="Name"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="65dp"
+        android:layout_marginTop="65dp"
         android:hint="e-mail"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/BN"
+        app:layout_constraintEnd_toEndOf="@+id/BN"
+        app:layout_constraintStart_toStartOf="@+id/BN"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="27dp"
+        android:onClick="updateContact"
         android:text="Update Data"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp"
-        android:onClick="updateContact"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/P" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:onClick="eraseContact"
         android:text="Erase Contact"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp"
-        android:onClick="eraseContact"/>
+        app:layout_constraintBottom_toBottomOf="@+id/updateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/updateButton" />
 
+    <EditText
+        android:id="@+id/BN"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="122dp"
+        android:ems="10"
+        android:hint="Business Number"
+        android:inputType="none"
+        app:layout_constraintEnd_toEndOf="@+id/PB"
+        app:layout_constraintStart_toStartOf="@+id/PB"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/PB"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="66dp"
+        android:layout_marginTop="66dp"
+        android:ems="10"
+        android:hint="Primary Business"
+        android:inputType="none"
+        app:layout_constraintBottom_toBottomOf="@+id/Ad"
+        app:layout_constraintEnd_toEndOf="@+id/P"
+        app:layout_constraintStart_toStartOf="@+id/Ad"
+        app:layout_constraintTop_toTopOf="@+id/BN" />
+
+    <EditText
+        android:id="@+id/Ad"
+        android:layout_width="419dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="203dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="202dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/P"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="146dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="146dp"
+        android:ems="10"
+        android:hint="Province/territory"
+        android:inputType="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Ad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BN" />
 
 
 </android.support.constraint.ConstraintLayout>

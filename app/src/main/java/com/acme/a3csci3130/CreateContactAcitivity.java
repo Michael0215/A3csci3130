@@ -9,7 +9,7 @@ import android.widget.EditText;
 public class CreateContactAcitivity extends Activity {
 
     private Button submitButton;
-    private EditText nameField, emailField;
+    private EditText nameField, emailField,BNField,PBField,AdField,PField;
     private MyApplicationData appState;
 
     @Override
@@ -22,16 +22,24 @@ public class CreateContactAcitivity extends Activity {
         submitButton = (Button) findViewById(R.id.submitButton);
         nameField = (EditText) findViewById(R.id.name);
         emailField = (EditText) findViewById(R.id.email);
+        BNField = (EditText) findViewById(R.id.BN);
+        PBField = (EditText) findViewById(R.id.PB);
+        AdField = (EditText) findViewById(R.id.Ad);
+        PField = (EditText) findViewById(R.id.P);
     }
 
-    public void submitInfoButton(View v) {
+    public void submitInfoButton(View v) {//the button of create contact
         //each entry needs a unique ID
         String personID = appState.firebaseReference.push().getKey();
         String name = nameField.getText().toString();
         String email = emailField.getText().toString();
-        Contact person = new Contact(personID, name, email);
+        String bn = BNField.getText().toString();
+        String pb = PBField.getText().toString();
+        String Ad = AdField.getText().toString();
+        String pf = PField.getText().toString();
+        Contact person = new Contact(personID, name, email,bn,pb,Ad,pf);//create object named person
 
-        appState.firebaseReference.child(personID).setValue(person);
+        appState.firebaseReference.child(personID).setValue(person);//import person to firebase
 
         finish();
 
